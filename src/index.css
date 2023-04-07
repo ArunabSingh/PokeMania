@@ -1,13 +1,218 @@
-body {
+*,
+*::after,
+*::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  padding: 0;
+  box-sizing: inherit; }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  text-align: center;
+  background-image: linear-gradient(to right bottom, rgba(247, 247, 247, 0.8), rgba(238, 238, 238, 0.8)), url(./assets/palm-leaf.png);
+  background-size: contain;
+  font-family: "Lato", sans-serif; }
+
+.primary-heading {
+  font-family: "Miltonian Tattoo";
+  font-size: 8rem;
+  padding: 2rem;
+  background-image: linear-gradient(to right, #ffcb05, #c7a008);
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 0.5px #2a75bb; }
+
+.btn {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background-color: #ff4747;
+  color: #0e1111; }
+  .btn__text {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(14, 17, 17, 0.6);
+    cursor: pointer;
+    background-color: #c9030a;
+    color: #ebebeb; }
+  .btn:active, .btn:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.35); }
+
+.card {
+  height: 30rem;
+  background-color: #3c5aa6;
+  margin: 2rem;
+  border-radius: 1rem;
+  flex: 0 0 24%;
+  text-decoration: none;
+  transition: all 0.2s; }
+  .card__title {
+    color: #ebebeb;
+    font-size: 4rem;
+    font-family: "Miltonian Tattoo";
+    text-transform: capitalize; }
+  .card__img {
+    height: 25rem;
+    width: 25rem; }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(14, 17, 17, 0.6);
+    cursor: pointer; }
+  .card:active, .card:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.35); }
+
+.pokeCard {
+  background-color: #ebebeb;
+  padding: 5rem;
+  height: 85rem;
+  width: 75rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1rem solid #ffcb05;
+  border-radius: 3rem;
+  margin-top: 10rem; }
+  .pokeCard__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .pokeCard__name {
+    text-transform: capitalize;
+    font-size: 3rem;
+    text-align: start;
+    flex: 0 0 28%; }
+  .pokeCard__stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0;
+    font-size: 1.15rem;
+    text-transform: capitalize; }
+  .pokeCard__item {
+    margin-left: 0.3rem;
+    font-size: 1.5rem; }
+  .pokeCard__imgContainer {
+    background-image: url(./assets/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40rem;
+    width: 100%;
+    border: 4px solid #999;
+    margin: 2rem 0; }
+  .pokeCard__img {
+    height: 35rem;
+    width: 35rem;
+    padding: 2rem;
+    margin-top: 2rem; }
+  .pokeCard__basics {
+    background-color: #f7f7f7;
+    margin-top: -2rem;
+    border: 2px solid #999;
+    color: #999;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 2.5rem; }
+  .pokeCard__abilities {
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    height: 20rem;
+    margin: 1rem;
+    text-align: start; }
+  .pokeCard__ability {
+    padding: 2rem; }
+  .pokeCard__types {
+    list-style: none;
+    font-size: 1.25rem;
+    font-weight: 300;
+    text-transform: capitalize;
+    height: 10rem;
+    margin: 1rem;
+    text-align: end;
+    display: flex;
+    justify-content: flex-end; }
+  .pokeCard__type {
+    padding: 2rem; }
+  .pokeCard--bug {
+    background-image: linear-gradient(to right, #99d98c, #76c893); }
+  .pokeCard--grass {
+    background-image: linear-gradient(to right, #99d98c, #76c893); }
+  .pokeCard--fire {
+    background-image: linear-gradient(to right, #ff4747, #c9030a); }
+  .pokeCard--water {
+    background-image: linear-gradient(to right, #1cadd9, #1f8ec1); }
+  .pokeCard--ice {
+    background-image: linear-gradient(to right, #1cadd9, #1f8ec1); }
+  .pokeCard--electric {
+    background-image: linear-gradient(to right, #ffd15c, #fcc55f); }
+  .pokeCard--psychic {
+    background-image: linear-gradient(to right, #b379f6, #9b15f4); }
+  .pokeCard--fairy {
+    background-image: linear-gradient(to right, #b379f6, #9b15f4); }
+  .pokeCard--ghost {
+    background-image: linear-gradient(to right, #b379f6, #9b15f4); }
+  .pokeCard--fighting {
+    background-image: linear-gradient(to right, #c38e6f, #bd764c); }
+  .pokeCard--rock {
+    background-image: linear-gradient(to right, #c38e6f, #bd764c); }
+  .pokeCard--ground {
+    background-image: linear-gradient(to right, #c38e6f, #bd764c); }
+  .pokeCard--dark {
+    background-image: linear-gradient(to right, #6c757d, #495057);
+    color: #ebebeb; }
+  .pokeCard--poison {
+    background-image: linear-gradient(to right, #6c757d, #495057);
+    color: #ebebeb; }
+  .pokeCard--steel {
+    background-image: linear-gradient(to right, #dee2e6, #adb5bd); }
+  .pokeCard--dragon {
+    background-image: linear-gradient(to right, #c4a36e, #b89151); }
+  .pokeCard--normal {
+    background-image: linear-gradient(to right, #f7f7f7, #eee); }
+
+.footer {
+  height: 10rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f7f7f7;
+  box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.35); }
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f7f7f7;
+  box-shadow: 0 0.5rem 1rem rgba(14, 17, 17, 0.35);
+  height: 8rem; }
+  .nav__link {
+    text-decoration: none;
+    color: #3c5aa6;
+    font-size: 4rem; }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 90vh;
+  margin-bottom: 8rem; }
