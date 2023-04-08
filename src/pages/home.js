@@ -2,10 +2,17 @@ import React, { useState, useEffect } from 'react';
 import PokemonCard from '../components/PokemonCard';
 import Header from '../components/Header';
 import { getPokemons, getMorePokemons } from '../services/pokemons';
+import SearchIcon from '@mui/icons-material/Search';
+import TextField from '@mui/material/TextField';
 
 const AllPokemon = () => {
   const [pokemons, setPokemons] = useState([]);
   const [count, setCount] = useState(1);
+  const [filter, setFilter] = useState("");
+
+  const handleSearchChange = (e) => {
+    setFilter(e.target.value);
+  };
 
   useEffect(() => {
     getPokemons().then((data) => {
@@ -32,8 +39,19 @@ const AllPokemon = () => {
   };
 
   return (
+  
     <>
       <Header />
+      <div className='search-container'>
+            <SearchIcon className='search-icon' />
+            <TextField
+              className='search-input'
+              onChange={handleSearchChange}
+              label="Pokemon"
+              variant="standard"
+            />
+          </div>
+
       <div className='cards'>
         {pokemons['results'] &&
           pokemons['results'].map((pokemon, index) => {
