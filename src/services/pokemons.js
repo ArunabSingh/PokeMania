@@ -9,3 +9,9 @@ export const getMorePokemons = (offset) => {
     response.json()
   );
 };
+
+export const getPokemonBasedOnType = (type) => {
+
+  const url = "https://pokeapi.co/api/v2/type";
+  return fetch(`${url}/${type}/`).then((response) => response.json());
+};
